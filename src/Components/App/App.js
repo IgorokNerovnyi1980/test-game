@@ -1,5 +1,6 @@
 import React from 'react';
-import './App.css';
+// eslint-disable-next-line
+import styles from './App.module.css';
 import Header from '../Header/Header';
 import MainScreen from '../MainScreen/MainScreen';
 
