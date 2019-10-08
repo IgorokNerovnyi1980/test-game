@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import quantity from '../../services/quantity';
+import random from '../../services/random';
 import Square from './Square';
 
-const fild = 10;
+const fild = 5;
 const size = 100 / fild;
 const value = quantity(fild);
+const occupiedFields = [...value];
+const varieble = random(occupiedFields.length);
 
 const Wrapper = styled.div`
   width: 300px;
@@ -18,15 +21,22 @@ const Wrapper = styled.div`
   box-sizing: border-box;
 `;
 
-const GameFild = () => {
-  console.log(size);
-  return (
-    <Wrapper>
-      {value.map(item => (
-        <Square key={item} width={size} height={size} />
-      ))}
-    </Wrapper>
-  );
-};
+class GameFild extends Component {
+  state = {
+    active: 0,
+    allFild: [],
+  };
+  render() {
+    console.log(varieble);
+    console.log(occupiedFields);
+    return (
+      <Wrapper>
+        {value.map(item => (
+          <Square key={item} width={size} height={size} />
+        ))}
+      </Wrapper>
+    );
+  }
+}
 
 export default GameFild;
