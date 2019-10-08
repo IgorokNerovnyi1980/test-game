@@ -1,24 +1,32 @@
 import React from 'react';
 import styled from 'styled-components';
+import quantity from '../../services/quantity';
 import Square from './Square';
 
-const field = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+const fild = 10;
+const size = 100 / fild;
+const value = quantity(fild);
 
 const Wrapper = styled.div`
-  width: 15em;
-  height: 15em;
+  width: 300px;
+  height: 300px;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   align-items: center;
-  border: 0.05em solid grey;
+  border: 1px solid grey;
+  box-sizing: border-box;
 `;
 
-const GameFild = () => (
-  <Wrapper>
-    {field.map(item => (
-      <Square key={item} body={item} />
-    ))}
-  </Wrapper>
-);
+const GameFild = () => {
+  console.log(size);
+  return (
+    <Wrapper>
+      {value.map(item => (
+        <Square key={item} width={size} height={size} />
+      ))}
+    </Wrapper>
+  );
+};
 
 export default GameFild;

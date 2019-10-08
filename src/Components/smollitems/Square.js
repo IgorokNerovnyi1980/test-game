@@ -4,12 +4,16 @@ import styled from 'styled-components';
 // const field = 15;
 
 const Wrapper = styled.div`
-  width: 1em;
-  height: 1em;
+  width: ${props => props.width}%;
+  height: ${props => props.height}%;
   background: white;
-  border: 0.05em solid grey;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  font-size: 0.5rem;
 `;
 
-const Square = ({ body }) => <Wrapper>{body}</Wrapper>;
+const Square = ({ width, height }) => (
+  <Wrapper width={width} height={height}></Wrapper>
+);
 
 export default Square;

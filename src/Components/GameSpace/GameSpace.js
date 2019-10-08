@@ -4,20 +4,20 @@ import Settings from '../smollitems/GameSettings/GameSettings';
 import Message from '../smollitems/GameMessage';
 import GameFild from '../smollitems/GameFild';
 
-const data = {
-  easyMode: {
-    field: 5,
-    delay: 2000,
-  },
-  normalMode: {
-    field: 10,
-    delay: 1000,
-  },
-  hardMode: {
-    field: 15,
-    delay: 900,
-  },
-};
+// const data = {
+//   easyMode: {
+//     field: 5,
+//     delay: 2000,
+//   },
+//   normalMode: {
+//     field: 10,
+//     delay: 1000,
+//   },
+//   hardMode: {
+//     field: 15,
+//     delay: 900,
+//   },
+// };
 const Wrapper = styled.div`
   width: 50%;
   height: 90vh;
