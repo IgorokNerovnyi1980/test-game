@@ -5,10 +5,9 @@ const all = function(num) {
 
 const quantity = function(num) {
   const value = all(num);
-  let result = [];
-  for (let i = 0; i < value; i++) {
-    result.push(i);
-  }
+  const result = Array(value)
+    .fill({})
+    .map((obj, index) => ({ id: index, name: index + 1, bg: 'white' }));
   return result;
 };
 export default quantity;
